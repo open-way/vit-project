@@ -1,0 +1,27 @@
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>UserId</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Body</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let post of posts">
+            <td>{{ post.id }}</td>
+            <td>{{ post.userId }}</td>
+            <td>{{ post.title }}</td>
+            <td>{{ post.body }}</td>
+            <td>
+                <button class="btn btn-primary" (click)="onEdit(post)">
+                    Editar
+                </button>
+                <button class="btn btn-danger" (click)="onDeletet(post.id)">
+                    Eliminar
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

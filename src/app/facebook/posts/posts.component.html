@@ -1,0 +1,22 @@
+<H1>Mis posts</H1>
+
+<div class="row">
+    <div class="col-md-6">
+
+
+
+        <vit-post-form-new [post]="postsss"></vit-post-form-new>
+
+
+
+    </div>
+    <div class="col-md-6">
+
+
+        <vit-post-lista (onEditPost)="onEdit($event)"></vit-post-lista>
+
+
+    </div>
+
+    <button (click)="load()">Load</button>
+</div>
