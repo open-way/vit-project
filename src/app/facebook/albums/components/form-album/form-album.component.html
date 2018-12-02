@@ -1,0 +1,48 @@
+<form [formGroup]="albumForm" (ngSubmit)="onSubmitAlbum()">
+  <div class="form-group row">
+    <label for="userId" class="col-form-label col-md-3">Usuario ID</label>
+    <div class="col-md-9">
+      <select name="userId" id="userId" class="form-control" formControlName="userId">
+        <option value="">Seleccionar</option>
+        <option value="1">User 01</option>
+        <option value="2">User 02</option>
+      </select>
+      <div *ngIf="albumForm.controls['userId'].errors && albumForm.controls['userId'].errors.required" class="alert alert-warning">
+        El campo es requerido
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="title" class="col-form-label col-md-3">Título</label>
+    <div class="col-md-9">
+      <input type="text" id="title" placeholder="Ingresar título" class="form-control" formControlName="title">
+
+      <div *ngIf="albumForm.controls['title'].errors && albumForm.controls['title'].errors.required" class="alert alert-warning">
+        El campo es requerido
+      </div>
+      <div *ngIf="albumForm.get('title').errors && albumForm.get('title').errors.maxlength" class="alert alert-warning">
+        El campo debe tener como máximo 10 Caracteres
+      </div>
+      <div *ngIf="albumForm.get('title').errors && albumForm.get('title').errors.minlength" class="alert alert-warning">
+        El campo debe tener como mínimo 5 Caracteres
+      </div>
+
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-md-12 text-right">
+      <button class="btn btn-warning" type="button" routerLink="../">Cancelar</button>
+      <button class="btn btn-info" type="submit" [disabled]="albumForm.invalid">Guardar</button>
+    </div>
+  </div>
+</form>
+VALUE:
+<code>
+  {{ albumForm.value | json }}
+</code>
+<br>
+VALID:
+<code>
+  {{ albumForm.valid }}
+</code>

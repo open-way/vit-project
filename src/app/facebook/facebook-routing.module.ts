@@ -19,7 +19,7 @@ const routes: Routes = [
             },
             {
                 path: 'albums',
-                loadChildren: ''
+                loadChildren: './albums/albums.module#AlbumsModule',
             },
             {
                 path: 'photos',

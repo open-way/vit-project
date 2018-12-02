@@ -7,7 +7,6 @@ import { CommonModule } from '@angular/common';
 import { PostsService } from './shared/posts.service';
 import { PostFormNewComponent } from './componets/post-form-new/post-form-new.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
     imports: [
@@ -15,7 +14,6 @@ import { HttpClientModule } from '@angular/common/http'
         CommonModule,
 
         FormsModule,
-        HttpClientModule,
     ],
     exports: [],
     declarations: [

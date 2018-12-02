@@ -11,6 +11,7 @@ import { routedComponents, AppRoutingModule } from './app-rounting.module';
 import { FooterComponent } from './layout/footer.component';
 import { ContentComponent } from './layout/content.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 // decorador que define un módulo
@@ -26,6 +27,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
   imports: [ // otros módulos que necesitamos para que este funcione
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent] // componente raíz para el arranque

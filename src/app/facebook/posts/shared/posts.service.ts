@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class PostsService {
-    private urlApi: string = `${environment.apiUrl}/posts`;
+    private urlApi: string = `${environment.apiUrl}posts`;
 
     constructor(private httpClient: HttpClient) {
     }
