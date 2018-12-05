@@ -18,6 +18,10 @@
       <td>
         {{ album.title }}
       </td>
+      <td>
+        <button (click)="onEdit(album.id)" class="btn btn-info">Editar</button>
+        <button (click)="onDelete(album.id)" class="btn btn-danger">Eliminar</button>
+      </td>
     </tr>
   </tbody>
 </table>

@@ -11,7 +11,9 @@ import { routedComponents, AppRoutingModule } from './app-rounting.module';
 import { FooterComponent } from './layout/footer.component';
 import { ContentComponent } from './layout/content.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptorService } from './utils/interceptors/token-interceptor.service';
+import { AuthGuardService } from './utils/guards/auth-guard.service';
 
 
 // decorador que define un módulo
@@ -29,7 +31,14 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    },
+    AuthGuardService,
+  ],
   bootstrap: [AppComponent] // componente raíz para el arranque
 })
 /**

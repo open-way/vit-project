@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { AuthGuardService } from './utils/guards/auth-guard.service';
 
 /**
  * http://localhost:4500/
@@ -19,11 +20,13 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    loadChildren: './about/about.module#AboutModule'
+    loadChildren: './about/about.module#AboutModule',
+    canActivate: [AuthGuardService,]
   },
   {
     path: 'facebook',
-    loadChildren: './facebook/facebook.module#FacebookModule'
+    loadChildren: './facebook/facebook.module#FacebookModule',
+    canActivate: [AuthGuardService,]
   },
   {
     path: '**',

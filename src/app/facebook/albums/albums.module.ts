@@ -6,14 +6,17 @@ import { AlbumsComponent } from './albums.component';
 import {
   ListAlbumsComponent,
   FormAlbumComponent,
+  FormAlbumEditComponent,
 } from './components';
 import { AlbumsService } from './shared/albums.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CustomValidatorsService } from './shared/custom-validators.service';
 
 @NgModule({
   declarations: [
     AlbumsComponent,
     FormAlbumComponent,
+    FormAlbumEditComponent,
     ListAlbumsComponent],
   imports: [
     CommonModule,
@@ -23,6 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   providers: [
     AlbumsService,
+
+    CustomValidatorsService,
   ]
 })
 export class AlbumsModule { }
